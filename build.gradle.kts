@@ -25,6 +25,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.azure.spring:spring-cloud-azure-starter-storage")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.liquibase:liquibase-core")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
