@@ -19,6 +19,7 @@ repositories {
 }
 
 extra["springCloudAzureVersion"] = "6.0.0-beta.4"
+extra["mapstructVersion"] = "1.5.3.Final"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -31,6 +32,8 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.mapstruct:mapstruct:${property("mapstructVersion")}")
+	annotationProcessor("org.mapstruct:mapstruct-processor:${property("mapstructVersion")}")
 }
 
 dependencyManagement {
