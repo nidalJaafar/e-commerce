@@ -6,6 +6,9 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * The type Categories response.
+ */
 @Data
 public class CategoriesResponse {
     @JsonProperty("data")

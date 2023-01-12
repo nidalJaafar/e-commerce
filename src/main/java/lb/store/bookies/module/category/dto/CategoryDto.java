@@ -5,8 +5,11 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.UUID;
 
+/**
+ * The type Category dto.
+ */
 @Data
 public class CategoryDto implements Serializable {
-    private final UUID id;
-    private final String Name;
+    private UUID id;
+    private String Name;
 }

@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * The type Category crud service.
+ */
 @Service
 @RequiredArgsConstructor
 public class CategoryCrudServiceImpl implements CategoryCrudService {

@@ -10,6 +10,9 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * The type Category.
+ */
 @Getter
 @Setter
 @ToString
