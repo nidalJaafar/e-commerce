@@ -1,6 +1,6 @@
 package lb.store.bookies.security.service.impl;
 
-import lb.store.bookies.security.UserRepository;
+import lb.store.bookies.security.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

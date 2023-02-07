@@ -1,6 +1,6 @@
-package lb.store.bookies.security;
+package lb.store.bookies.security.repository;
 
-import lb.store.bookies.security.entity.User;
+import lb.store.bookies.common.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

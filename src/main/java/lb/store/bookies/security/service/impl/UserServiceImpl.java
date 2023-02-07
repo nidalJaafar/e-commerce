@@ -1,15 +1,15 @@
 package lb.store.bookies.security.service.impl;
 
-import lb.store.bookies.security.UserRepository;
-import lb.store.bookies.security.dto.UserDto;
-import lb.store.bookies.security.entity.User;
+import lb.store.bookies.security.repository.UserRepository;
+import lb.store.bookies.common.dto.UserDto;
+import lb.store.bookies.common.entity.User;
 import lb.store.bookies.security.mapper.JwtMapper;
-import lb.store.bookies.security.mapper.UserMapper;
+import lb.store.bookies.common.mapper.UserMapper;
 import lb.store.bookies.security.request.JwtRequest;
 import lb.store.bookies.security.response.UserResponse;
 import lb.store.bookies.security.response.UsersResponse;
 import lb.store.bookies.security.service.UserService;
-import lb.store.bookies.security.util.AuthenticatedUser;
+import lb.store.bookies.common.util.AuthenticatedUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

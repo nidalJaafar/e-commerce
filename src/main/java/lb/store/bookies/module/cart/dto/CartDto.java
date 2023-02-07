@@ -1,11 +1,10 @@
 package lb.store.bookies.module.cart.dto;
 
-import lb.store.bookies.module.product.dto.ProductDto;
-import lb.store.bookies.security.dto.UserDto;
+import lb.store.bookies.common.dto.ProductDto;
+import lb.store.bookies.common.dto.UserDto;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Cart dto.

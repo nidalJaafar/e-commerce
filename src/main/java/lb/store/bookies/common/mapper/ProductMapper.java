@@ -1,8 +1,8 @@
-package lb.store.bookies.module.product.mapper;
+package lb.store.bookies.common.mapper;
 
 import lb.store.bookies.common.repository.CategoryRepository;
-import lb.store.bookies.module.product.dto.ProductDto;
-import lb.store.bookies.module.product.entity.Product;
+import lb.store.bookies.common.dto.ProductDto;
+import lb.store.bookies.common.entity.Product;
 import lb.store.bookies.module.product.request.ProductRequest;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;

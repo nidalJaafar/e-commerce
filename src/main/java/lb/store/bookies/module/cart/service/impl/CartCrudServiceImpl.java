@@ -2,14 +2,14 @@ package lb.store.bookies.module.cart.service.impl;
 
 import lb.store.bookies.common.repository.CartRepository;
 import lb.store.bookies.common.repository.ProductRepository;
-import lb.store.bookies.module.cart.entity.Cart;
-import lb.store.bookies.module.cart.mapper.CartMapper;
+import lb.store.bookies.common.entity.Cart;
+import lb.store.bookies.common.mapper.CartMapper;
 import lb.store.bookies.module.cart.request.CartRequest;
 import lb.store.bookies.module.cart.response.CartResponse;
 import lb.store.bookies.module.cart.service.CartCrudService;
-import lb.store.bookies.module.product.entity.Product;
-import lb.store.bookies.security.entity.User;
-import lb.store.bookies.security.util.AuthenticatedUser;
+import lb.store.bookies.common.entity.Product;
+import lb.store.bookies.common.entity.User;
+import lb.store.bookies.common.util.AuthenticatedUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package lb.store.bookies.security.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lb.store.bookies.security.dto.UserDto;
+import lb.store.bookies.common.dto.UserDto;
 import lombok.Data;
 
 /**

@@ -1,10 +1,8 @@
-package lb.store.bookies.module.cart.mapper;
+package lb.store.bookies.common.mapper;
 
 import lb.store.bookies.module.cart.dto.CartDto;
-import lb.store.bookies.module.cart.entity.Cart;
-import lb.store.bookies.module.product.mapper.ProductMapper;
-import lb.store.bookies.security.mapper.UserMapper;
-import lb.store.bookies.security.util.AuthenticatedUser;
+import lb.store.bookies.common.entity.Cart;
+import lb.store.bookies.common.util.AuthenticatedUser;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 import org.springframework.beans.factory.annotation.Autowired;

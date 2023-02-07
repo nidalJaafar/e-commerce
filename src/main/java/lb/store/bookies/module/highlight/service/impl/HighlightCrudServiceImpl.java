@@ -2,7 +2,7 @@ package lb.store.bookies.module.highlight.service.impl;
 
 import lb.store.bookies.common.repository.HighlightRepository;
 import lb.store.bookies.module.highlight.dto.HighlightDto;
-import lb.store.bookies.module.highlight.entity.Highlight;
+import lb.store.bookies.common.entity.Highlight;
 import lb.store.bookies.module.highlight.mapper.HighlightMapper;
 import lb.store.bookies.module.highlight.request.HighlightRequest;
 import lb.store.bookies.module.highlight.response.HighlightResponse;

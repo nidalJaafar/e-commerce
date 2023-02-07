@@ -1,26 +1,26 @@
-package lb.store.bookies.module.cart.entity;
+package lb.store.bookies.common.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lb.store.bookies.common.BaseEntity;
-import lb.store.bookies.module.product.entity.Product;
-import lb.store.bookies.security.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Cart.
+ * Order.
  */
 @Getter
 @Setter
 @ToString
 @Entity
-public class Cart extends BaseEntity {
-    @ManyToOne
+@Table(name = "orders")
+public class Order extends BaseEntity {
+    @OneToOne
     private User user;
     @ManyToOne
-    @ToString.Exclude
     private Product product;
     private Long quantity;
 }

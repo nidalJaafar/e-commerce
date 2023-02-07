@@ -1,4 +1,4 @@
-package lb.store.bookies.security.entity;
+package lb.store.bookies.common.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
