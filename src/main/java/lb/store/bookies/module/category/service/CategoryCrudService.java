@@ -1,7 +1,6 @@
 package lb.store.bookies.module.category.service;
 
-import lb.store.bookies.module.category.request.CategoryPostRequest;
-import lb.store.bookies.module.category.request.CategoryPutRequest;
+import lb.store.bookies.module.category.request.CategoryRequest;
 import lb.store.bookies.module.category.response.CategoriesResponse;
 import lb.store.bookies.module.category.response.CategoryResponse;
 
@@ -32,7 +31,7 @@ public interface CategoryCrudService {
      * @param request the request
      * @return the category response
      */
-    CategoryResponse post(CategoryPostRequest request);
+    CategoryResponse post(CategoryRequest request);
 
     /**
      * Put category response.
@@ -41,7 +40,7 @@ public interface CategoryCrudService {
      * @param id      the id
      * @return the category response
      */
-    CategoryResponse put(CategoryPutRequest request, UUID id);
+    CategoryResponse put(CategoryRequest request, UUID id);
 
     /**
      * Delete.

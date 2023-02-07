@@ -4,8 +4,7 @@ import lb.store.bookies.common.repository.CategoryRepository;
 import lb.store.bookies.module.category.dto.CategoryDto;
 import lb.store.bookies.module.category.entity.Category;
 import lb.store.bookies.module.category.mapper.CategoryMapper;
-import lb.store.bookies.module.category.request.CategoryPostRequest;
-import lb.store.bookies.module.category.request.CategoryPutRequest;
+import lb.store.bookies.module.category.request.CategoryRequest;
 import lb.store.bookies.module.category.response.CategoriesResponse;
 import lb.store.bookies.module.category.response.CategoryResponse;
 import org.junit.jupiter.api.Test;
@@ -67,15 +66,15 @@ class CategoryCrudServiceImplTest {
     void post() {
         // given
         given(categoryRepository.save(any())).willReturn(new Category());
-        given(categoryMapper.categoryPostRequestToCategory(any())).willReturn(new Category());
+        given(categoryMapper.categoryRequestToCategory(any())).willReturn(new Category());
         given(categoryMapper.categoryToCategoryDto(any())).willReturn(new CategoryDto());
 
         // when
-        CategoryResponse post = categoryCrudService.post(new CategoryPostRequest());
+        CategoryResponse post = categoryCrudService.post(new CategoryRequest());
 
         // then
         then(categoryRepository).should().save(any());
-        then(categoryMapper).should().categoryPostRequestToCategory(any());
+        then(categoryMapper).should().categoryRequestToCategory(any());
         then(categoryMapper).should().categoryToCategoryDto(any());
         assertThat(post).isNotNull();
     }
@@ -85,16 +84,16 @@ class CategoryCrudServiceImplTest {
         // given
         given(categoryRepository.findById(any())).willReturn(Optional.of(new Category()));
         given(categoryMapper.updateCategoryFromCategoryDto(any(), any())).willReturn(new Category());
-        given(categoryMapper.categoryPutRequestToCategoryDto(any())).willReturn(new CategoryDto());
+        given(categoryMapper.categoryRequestToCategoryDto(any())).willReturn(new CategoryDto());
         given(categoryMapper.categoryToCategoryDto(any())).willReturn(new CategoryDto());
         given(categoryRepository.save(any())).willReturn(new Category());
 
         // when
-        CategoryResponse put = categoryCrudService.put(new CategoryPutRequest(), UUID.randomUUID());
+        CategoryResponse put = categoryCrudService.put(new CategoryRequest(), UUID.randomUUID());
 
         // then
         then(categoryRepository).should().save(any());
-        then(categoryMapper).should().categoryPutRequestToCategoryDto(any());
+        then(categoryMapper).should().categoryRequestToCategoryDto(any());
         then(categoryMapper).should().categoryToCategoryDto(any());
         assertThat(put).isNotNull();
     }
