@@ -2,8 +2,7 @@ package lb.store.bookies.module.category.mapper;
 
 import lb.store.bookies.module.category.dto.CategoryDto;
 import lb.store.bookies.module.category.entity.Category;
-import lb.store.bookies.module.category.request.CategoryPostRequest;
-import lb.store.bookies.module.category.request.CategoryPutRequest;
+import lb.store.bookies.module.category.request.CategoryRequest;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -17,7 +16,7 @@ public interface CategoryMapper {
 
     List<CategoryDto> categoryListToCategoryDtoList(List<Category> categoryList);
 
-    Category categoryPostRequestToCategory(CategoryPostRequest request);
+    Category categoryRequestToCategory(CategoryRequest request);
 
-    CategoryDto categoryPutRequestToCategoryDto(CategoryPutRequest request);
+    CategoryDto categoryRequestToCategoryDto(CategoryRequest request);
 }
