@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lb.store.bookies.module.order.request.OrderDeleteRequest;
 import lb.store.bookies.module.order.request.OrderRequest;
 import lb.store.bookies.module.order.response.OrderResponse;
-import lb.store.bookies.module.order.service.OrderService;
+import lb.store.bookies.module.order.service.OrderCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,7 +17,7 @@ import java.util.UUID;
 @RequestMapping("/api/v1/order")
 public class OrderCrudController {
 
-    private final OrderService service;
+    private final OrderCrudService service;
 
     @GetMapping
     public OrderResponse get() {

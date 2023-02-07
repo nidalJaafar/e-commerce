@@ -6,7 +6,7 @@ import lb.store.bookies.module.order.response.OrderResponse;
 
 import java.util.UUID;
 
-public interface OrderService {
+public interface OrderCrudService {
 
     OrderResponse get();
 

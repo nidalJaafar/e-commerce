@@ -10,7 +10,7 @@ import lb.store.bookies.module.order.mapper.OrderMapper;
 import lb.store.bookies.module.order.request.OrderDeleteRequest;
 import lb.store.bookies.module.order.request.OrderRequest;
 import lb.store.bookies.module.order.response.OrderResponse;
-import lb.store.bookies.module.order.service.OrderService;
+import lb.store.bookies.module.order.service.OrderCrudService;
 import lb.store.bookies.module.product.entity.Product;
 import lb.store.bookies.security.util.AuthenticatedUser;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService {
+public class OrderCrudCrudServiceImpl implements OrderCrudService {
 
     private final OrderRepository orderRepository;
     private final CartRepository cartRepository;
