@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="3" author="nidal">
+        <addUniqueConstraint tableName="category" columnNames="name"/>
+        <addUniqueConstraint tableName="product" columnNames="name"/>
+        <addUniqueConstraint tableName="product" columnNames="image"/>
+        <addUniqueConstraint tableName="product" columnNames="description"/>
+        <addUniqueConstraint tableName="highlight" columnNames="product_id"/>
+        <addUniqueConstraint tableName="users" columnNames="email"/>
+    </changeSet>
+</databaseChangeLog>
