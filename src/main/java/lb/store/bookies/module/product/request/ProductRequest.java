@@ -7,6 +7,9 @@ import lombok.Data;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Product request.
+ */
 @Data
 public class ProductRequest {
     @NotEmpty

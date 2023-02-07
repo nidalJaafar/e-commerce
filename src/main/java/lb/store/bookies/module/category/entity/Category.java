@@ -13,7 +13,7 @@ import lombok.ToString;
 import java.util.List;
 
 /**
- * The type Category.
+ * Category.
  */
 @Getter
 @Setter

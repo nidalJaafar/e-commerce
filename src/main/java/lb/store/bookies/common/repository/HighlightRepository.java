@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+/**
+ * Highlight repository.
+ */
 @Repository
 public interface HighlightRepository extends JpaRepository<Highlight, UUID> {
 }

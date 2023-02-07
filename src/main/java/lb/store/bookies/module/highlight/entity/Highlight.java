@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * Highlight.
+ */
 @Getter
 @Setter
 @ToString

@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * User service.
+ */
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {

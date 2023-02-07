@@ -8,6 +8,9 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.UUID;
 
+/**
+ * Order dto.
+ */
 @Data
 public class OrderDto implements Serializable {
     private UUID id;

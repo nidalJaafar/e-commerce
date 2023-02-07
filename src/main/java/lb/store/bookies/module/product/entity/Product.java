@@ -12,6 +12,9 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * Product.
+ */
 @Getter
 @Setter
 @ToString

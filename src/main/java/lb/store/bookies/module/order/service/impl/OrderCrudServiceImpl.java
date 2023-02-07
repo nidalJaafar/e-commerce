@@ -21,9 +21,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Order crud service.
+ */
 @Service
 @RequiredArgsConstructor
-public class OrderCrudCrudServiceImpl implements OrderCrudService {
+public class OrderCrudServiceImpl implements OrderCrudService {
 
     private final OrderRepository orderRepository;
     private final CartRepository cartRepository;

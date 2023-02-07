@@ -15,6 +15,9 @@ import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Base entity.
+ */
 @Getter
 @Setter
 @ToString

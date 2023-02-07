@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Cart crud service.
+ */
 @Service
 @RequiredArgsConstructor
 public class CartCrudServiceImpl implements CartCrudService {

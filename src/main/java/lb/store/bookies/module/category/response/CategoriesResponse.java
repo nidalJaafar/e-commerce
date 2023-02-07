@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * The type Categories response.
+ * Categories response.
  */
 @Data
 public class CategoriesResponse {

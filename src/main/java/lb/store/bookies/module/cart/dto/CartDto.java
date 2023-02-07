@@ -7,6 +7,9 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Cart dto.
+ */
 @Data
 public class CartDto implements Serializable {
     private UserDto user;

@@ -6,6 +6,9 @@ import lombok.Data;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Order request.
+ */
 @Data
 public class OrderRequest {
     @NotEmpty
