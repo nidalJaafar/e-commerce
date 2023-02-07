@@ -2,9 +2,9 @@ package lb.store.bookies.module.product.service.impl;
 
 import lb.store.bookies.common.repository.CategoryRepository;
 import lb.store.bookies.common.repository.ProductRepository;
-import lb.store.bookies.module.category.entity.Category;
-import lb.store.bookies.module.product.entity.Product;
-import lb.store.bookies.module.product.mapper.ProductMapper;
+import lb.store.bookies.common.entity.Category;
+import lb.store.bookies.common.entity.Product;
+import lb.store.bookies.common.mapper.ProductMapper;
 import lb.store.bookies.module.product.request.CategoryRequest;
 import lb.store.bookies.module.product.request.ProductRequest;
 import lb.store.bookies.module.product.response.ProductResponse;

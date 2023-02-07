@@ -1,6 +1,6 @@
 package lb.store.bookies.security.mapper;
 
-import lb.store.bookies.security.entity.User;
+import lb.store.bookies.common.entity.User;
 import lb.store.bookies.security.request.JwtRequest;
 import lb.store.bookies.security.type.Role;
 import org.mapstruct.AfterMapping;

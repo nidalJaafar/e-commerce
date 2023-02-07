@@ -1,8 +1,8 @@
 package lb.store.bookies.module.order.mapper;
 
-import lb.store.bookies.module.cart.entity.Cart;
+import lb.store.bookies.common.entity.Cart;
 import lb.store.bookies.module.order.dto.OrderDto;
-import lb.store.bookies.module.order.entity.Order;
+import lb.store.bookies.common.entity.Order;
 import org.mapstruct.*;
 
 import java.util.List;

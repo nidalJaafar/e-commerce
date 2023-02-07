@@ -1,4 +1,4 @@
-package lb.store.bookies.security.dto;
+package lb.store.bookies.common.dto;
 
 import lombok.Data;
 

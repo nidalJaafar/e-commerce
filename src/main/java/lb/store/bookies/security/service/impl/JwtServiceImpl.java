@@ -1,7 +1,7 @@
 package lb.store.bookies.security.service.impl;
 
-import lb.store.bookies.security.UserRepository;
-import lb.store.bookies.security.entity.User;
+import lb.store.bookies.security.repository.UserRepository;
+import lb.store.bookies.common.entity.User;
 import lb.store.bookies.security.mapper.JwtMapper;
 import lb.store.bookies.security.request.JwtRequest;
 import lb.store.bookies.security.response.JwtResponse;

@@ -1,7 +1,7 @@
-package lb.store.bookies.security.mapper;
+package lb.store.bookies.common.mapper;
 
-import lb.store.bookies.security.dto.UserDto;
-import lb.store.bookies.security.entity.User;
+import lb.store.bookies.common.dto.UserDto;
+import lb.store.bookies.common.entity.User;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

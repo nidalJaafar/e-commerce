@@ -1,6 +1,6 @@
 package lb.store.bookies.security.response;
 
-import lb.store.bookies.security.dto.UserDto;
+import lb.store.bookies.common.dto.UserDto;
 import lombok.Data;
 
 import java.util.List;

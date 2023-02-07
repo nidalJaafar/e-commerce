@@ -3,7 +3,6 @@ package lb.store.bookies.common;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import lb.store.bookies.module.category.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -36,8 +35,8 @@ public class BaseEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Category category = (Category) o;
-        return id != null && Objects.equals(id, category.id);
+        BaseEntity baseEntity = (BaseEntity) o;
+        return id != null && Objects.equals(id, baseEntity.id);
     }
 
     @Override

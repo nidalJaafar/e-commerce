@@ -1,6 +1,5 @@
-package lb.store.bookies.module.product.dto;
+package lb.store.bookies.common.dto;
 
-import lb.store.bookies.module.category.dto.CategoryDto;
 import lombok.Data;
 
 import java.io.Serializable;

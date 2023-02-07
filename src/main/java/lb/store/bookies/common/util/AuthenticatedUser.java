@@ -1,6 +1,6 @@
-package lb.store.bookies.security.util;
+package lb.store.bookies.common.util;
 
-import lb.store.bookies.security.entity.User;
+import lb.store.bookies.common.entity.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 /**

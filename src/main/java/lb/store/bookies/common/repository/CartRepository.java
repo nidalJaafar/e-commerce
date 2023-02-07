@@ -1,6 +1,6 @@
 package lb.store.bookies.common.repository;
 
-import lb.store.bookies.module.cart.entity.Cart;
+import lb.store.bookies.common.entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

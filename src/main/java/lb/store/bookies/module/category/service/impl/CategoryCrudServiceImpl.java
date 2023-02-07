@@ -1,7 +1,7 @@
 package lb.store.bookies.module.category.service.impl;
 
 import lb.store.bookies.common.repository.CategoryRepository;
-import lb.store.bookies.module.category.entity.Category;
+import lb.store.bookies.common.entity.Category;
 import lb.store.bookies.module.category.mapper.CategoryMapper;
 import lb.store.bookies.module.category.request.CategoryRequest;
 import lb.store.bookies.module.category.response.CategoriesResponse;

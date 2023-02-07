@@ -1,7 +1,7 @@
 package lb.store.bookies.module.category.mapper;
 
-import lb.store.bookies.module.category.dto.CategoryDto;
-import lb.store.bookies.module.category.entity.Category;
+import lb.store.bookies.common.dto.CategoryDto;
+import lb.store.bookies.common.entity.Category;
 import lb.store.bookies.module.category.request.CategoryRequest;
 import org.mapstruct.*;
 
