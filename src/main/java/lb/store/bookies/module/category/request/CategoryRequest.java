@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 /**
- * The type Category post request.
+ * Category request.
  */
 @Data
 public class CategoryRequest {

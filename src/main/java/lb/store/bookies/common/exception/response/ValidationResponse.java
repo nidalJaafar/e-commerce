@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * Validation response.
+ */
 @Data
 public class ValidationResponse {
     private String message;

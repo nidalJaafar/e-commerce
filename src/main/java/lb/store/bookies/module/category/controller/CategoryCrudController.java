@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 /**
- * The type Category crud controller.
+ * Category crud controller.
  */
 @RequiredArgsConstructor
 @RestController

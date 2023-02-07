@@ -1,5 +1,15 @@
 package lb.store.bookies.security.type;
 
+/**
+ * Role.
+ */
 public enum Role {
-    USER, ADMIN
+    /**
+     * User role.
+     */
+    USER,
+    /**
+     * Admin role.
+     */
+    ADMIN
 }

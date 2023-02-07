@@ -5,7 +5,7 @@ import lb.store.bookies.module.category.dto.CategoryDto;
 import lombok.Data;
 
 /**
- * The type Category response.
+ * Category response.
  */
 @Data
 public class CategoryResponse {

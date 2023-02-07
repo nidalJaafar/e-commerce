@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
+/**
+ * Database exception handler.
+ */
 @RestControllerAdvice
 public class DatabaseExceptionHandler {
 
@@ -22,6 +25,12 @@ public class DatabaseExceptionHandler {
         map.put("update or delete on table", "entry in use");
     }
 
+    /**
+     * Already exists exception response.
+     *
+     * @param e the e
+     * @return the exception response
+     */
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = DataIntegrityViolationException.class)
     public ExceptionResponse alreadyExists(DataIntegrityViolationException e) {
@@ -30,6 +39,11 @@ public class DatabaseExceptionHandler {
         return new ExceptionResponse().setMessage(exceptionMessage);
     }
 
+    /**
+     * Does not exist exception response.
+     *
+     * @return the exception response
+     */
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
     @ExceptionHandler(value = NoSuchElementException.class)
     public ExceptionResponse doesNotExist() {

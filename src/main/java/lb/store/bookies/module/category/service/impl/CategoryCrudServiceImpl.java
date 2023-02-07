@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 import java.util.UUID;
 
 /**
- * The type Category crud service.
+ * Category crud service.
  */
 @Service
 @RequiredArgsConstructor

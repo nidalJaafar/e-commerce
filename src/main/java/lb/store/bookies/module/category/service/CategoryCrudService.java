@@ -7,7 +7,7 @@ import lb.store.bookies.module.category.response.CategoryResponse;
 import java.util.UUID;
 
 /**
- * The interface Category crud service.
+ * Category crud service.
  */
 public interface CategoryCrudService {
     /**

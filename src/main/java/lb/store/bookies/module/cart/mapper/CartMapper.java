@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+/**
+ * Cart mapper.
+ */
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public abstract class CartMapper {
     @Autowired
@@ -18,6 +21,12 @@ public abstract class CartMapper {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * Cart to cart dto cart dto.
+     *
+     * @param cart the cart
+     * @return the cart dto
+     */
     public CartDto cartToCartDto(Cart cart) {
         return new CartDto()
                 .setProduct(productMapper.productToProductDto(cart.getProduct()))
@@ -25,5 +34,11 @@ public abstract class CartMapper {
                 .setQuantity(cart.getQuantity());
     }
 
+    /**
+     * Cart list to cart dto list list.
+     *
+     * @param cartList the cart list
+     * @return the list
+     */
     public abstract List<CartDto> cartListToCartDtoList(List<Cart> cartList);
 }

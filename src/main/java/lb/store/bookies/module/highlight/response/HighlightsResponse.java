@@ -6,6 +6,9 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * Highlights response.
+ */
 @Data
 public class HighlightsResponse {
     @JsonProperty("data")

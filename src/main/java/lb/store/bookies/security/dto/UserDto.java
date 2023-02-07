@@ -5,6 +5,9 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.UUID;
 
+/**
+ * User dto.
+ */
 @Data
 public class UserDto implements Serializable {
     private UUID id;

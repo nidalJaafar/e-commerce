@@ -10,13 +10,28 @@ import org.mapstruct.ReportingPolicy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * Jwt mapper.
+ */
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.WARN)
 public abstract class JwtMapper {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * Jwt request to user.
+     *
+     * @param jwtRequest the jwt request
+     * @return the user
+     */
     public abstract User jwtRequestToUser(JwtRequest jwtRequest);
 
+    /**
+     * After mapping user.
+     *
+     * @param user the user
+     * @return the user
+     */
     @AfterMapping
     protected User afterMapping(@MappingTarget User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));

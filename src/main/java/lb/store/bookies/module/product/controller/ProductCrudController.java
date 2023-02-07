@@ -13,22 +13,42 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+/**
+ * Product crud controller.
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/product")
 public class ProductCrudController {
     private final ProductCrudService service;
 
+    /**
+     * Get product response.
+     *
+     * @param id the id
+     * @return the product response
+     */
     @GetMapping("/{id}")
     public ProductResponse get(@PathVariable UUID id) {
         return service.get(id);
     }
 
+    /**
+     * Get products response.
+     *
+     * @return the products response
+     */
     @GetMapping
     public ProductsResponse get() {
         return service.get();
     }
 
+    /**
+     * Post product response.
+     *
+     * @param request the request
+     * @return the product response
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
@@ -36,6 +56,13 @@ public class ProductCrudController {
         return service.post(request);
     }
 
+    /**
+     * Put product response.
+     *
+     * @param request the request
+     * @param id      the id
+     * @return the product response
+     */
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
@@ -43,6 +70,13 @@ public class ProductCrudController {
         return service.put(request, id);
     }
 
+    /**
+     * Add categories product response.
+     *
+     * @param request the request
+     * @param id      the id
+     * @return the product response
+     */
     @PutMapping("/category/add/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
@@ -50,6 +84,13 @@ public class ProductCrudController {
         return service.addCategories(request, id);
     }
 
+    /**
+     * Sets categories.
+     *
+     * @param request the request
+     * @param id      the id
+     * @return the categories
+     */
     @PutMapping("/category/set/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
@@ -57,6 +98,13 @@ public class ProductCrudController {
         return service.setCategories(request, id);
     }
 
+    /**
+     * Delete categories product response.
+     *
+     * @param request the request
+     * @param id      the id
+     * @return the product response
+     */
     @PutMapping("/category/delete/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
@@ -64,6 +112,11 @@ public class ProductCrudController {
         return service.deleteCategories(request, id);
     }
 
+    /**
+     * Delete.
+     *
+     * @param id the id
+     */
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasRole('ADMIN')")

@@ -6,6 +6,9 @@ import lombok.Data;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Order delete request.
+ */
 @Data
 public class OrderDeleteRequest {
     @NotEmpty

@@ -16,17 +16,35 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * Web security config.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class WebSecurityConfig {
 
+    /**
+     * Password encoder password encoder.
+     *
+     * @return the password encoder
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
 
+    /**
+     * Configure security filter chain.
+     *
+     * @param http            the http
+     * @param filter          the filter
+     * @param service         the service
+     * @param passwordEncoder the password encoder
+     * @return the security filter chain
+     * @throws Exception the exception
+     */
     @Bean
     public SecurityFilterChain configure(HttpSecurity http, JwtRequestFilter filter, JwtUserDetailsService service, PasswordEncoder passwordEncoder) throws Exception {
         AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManagerBuilder.class).userDetailsService(service).passwordEncoder(passwordEncoder).and().build();

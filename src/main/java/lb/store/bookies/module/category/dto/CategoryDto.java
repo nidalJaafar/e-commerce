@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * The type Category dto.
+ * Category dto.
  */
 @Data
 public class CategoryDto implements Serializable {
