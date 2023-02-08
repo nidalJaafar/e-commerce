@@ -19,17 +19,22 @@ repositories {
 }
 
 extra["springCloudAzureVersion"] = "6.0.0-beta.4"
+extra["mapstructVersion"] = "1.5.3.Final"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+	implementation("io.jsonwebtoken:jjwt:0.9.1")
+	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.azure.spring:spring-cloud-azure-starter-storage")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.liquibase:liquibase-core")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.mapstruct:mapstruct:${property("mapstructVersion")}")
+	annotationProcessor("org.mapstruct:mapstruct-processor:${property("mapstructVersion")}")
 }
 
 dependencyManagement {
