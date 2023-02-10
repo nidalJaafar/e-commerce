@@ -118,9 +118,8 @@ public class ProductCrudServiceImpl implements ProductCrudService {
                 product.setMainImage(imageList.get(0));
                 productRepository.save(product);
             };
-            Optional.ofNullable(product.getMainImage()).ifPresentOrElse(image -> {
-                imageCrudService.deleteImages(Collections.singletonList(image.getId()), runnable);
-            }, runnable);
+            Optional.ofNullable(product.getMainImage())
+                    .ifPresentOrElse(image -> imageCrudService.deleteImages(Collections.singletonList(image.getId()), runnable), runnable);
         });
     }
 
