@@ -1,10 +1,13 @@
 package lb.store.bookies.module.product.service;
 
+import lb.store.bookies.module.product.request.ImageRequest;
 import lb.store.bookies.module.product.request.CategoryRequest;
 import lb.store.bookies.module.product.request.ProductRequest;
 import lb.store.bookies.module.product.response.ProductResponse;
 import lb.store.bookies.module.product.response.ProductsResponse;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -76,4 +79,29 @@ public interface ProductCrudService {
      * @return the product response
      */
     ProductResponse deleteCategories(CategoryRequest request, UUID id);
+
+    /**
+     * Add images.
+     *
+     * @param request the request
+     * @param id      the id
+     */
+    void addImages(List<MultipartFile> request, UUID id);
+
+    /**
+     * Delete images.
+     *
+     * @param request the request
+     * @param id      the id
+     */
+    void deleteImages(ImageRequest request, UUID id);
+
+    /**
+     * Update main image.
+     *
+     * @param request the request
+     * @param id      the id
+     */
+    void updateMainImage(MultipartFile request, UUID id);
+
 }

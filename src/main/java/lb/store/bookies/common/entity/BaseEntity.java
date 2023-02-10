@@ -1,4 +1,4 @@
-package lb.store.bookies.common;
+package lb.store.bookies.common.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

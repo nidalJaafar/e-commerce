@@ -1,5 +1,6 @@
 package lb.store.bookies.common.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,6 +17,9 @@ public class ProductDto implements Serializable {
     private String description;
     private Long quantity;
     private Double price;
-    private String image;
+    @JsonProperty("main_image")
+    private ImageDto mainImageDto;
+    @JsonProperty("image_list")
+    private List<ImageDto> imageDtoList;
     private List<CategoryDto> categories;
 }

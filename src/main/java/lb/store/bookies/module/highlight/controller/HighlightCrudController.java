@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
@@ -68,6 +69,19 @@ public class HighlightCrudController {
     @PreAuthorize("hasRole('ADMIN')")
     public HighlightResponse put(@Valid @RequestBody HighlightRequest request, @PathVariable UUID id) {
         return service.put(request, id);
+    }
+
+    /**
+     * Update image.
+     *
+     * @param request the request
+     * @param id      the id
+     */
+    @PutMapping("/image/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
+    public void updateImage(@RequestPart("file") MultipartFile request, @PathVariable UUID id) {
+        service.updateImage(request, id);
     }
 
     /**
