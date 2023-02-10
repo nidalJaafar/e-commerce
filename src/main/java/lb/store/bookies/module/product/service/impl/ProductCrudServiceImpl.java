@@ -1,19 +1,25 @@
 package lb.store.bookies.module.product.service.impl;
 
+import lb.store.bookies.common.entity.Category;
+import lb.store.bookies.common.entity.Image;
+import lb.store.bookies.common.entity.Product;
+import lb.store.bookies.common.mapper.ImageMapper;
+import lb.store.bookies.common.mapper.ProductMapper;
 import lb.store.bookies.common.repository.CategoryRepository;
 import lb.store.bookies.common.repository.ProductRepository;
-import lb.store.bookies.common.entity.Category;
-import lb.store.bookies.common.entity.Product;
-import lb.store.bookies.common.mapper.ProductMapper;
+import lb.store.bookies.common.service.ImageCrudService;
 import lb.store.bookies.module.product.request.CategoryRequest;
+import lb.store.bookies.module.product.request.ImageRequest;
 import lb.store.bookies.module.product.request.ProductRequest;
 import lb.store.bookies.module.product.response.ProductResponse;
 import lb.store.bookies.module.product.response.ProductsResponse;
 import lb.store.bookies.module.product.service.ProductCrudService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Product crud service.
@@ -24,11 +30,13 @@ public class ProductCrudServiceImpl implements ProductCrudService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
     private final CategoryRepository categoryRepository;
+    private final ImageCrudService imageCrudService;
+    private final ImageMapper imageMapper;
 
     @Override
     public ProductResponse get(UUID id) {
         Product product = productRepository.findById(id).orElseThrow();
-        return new ProductResponse().setProductDto(productMapper.productToProductDto(product));
+        return new ProductResponse().setProductDto(productMapper.productToProductDto(product).setImageDtoList(imageMapper.imageListToImageDtoList(product.getImages())));
     }
 
     @Override
@@ -81,4 +89,38 @@ public class ProductCrudServiceImpl implements ProductCrudService {
         product.getCategories().removeAll(categoryRepository.findAllById(request.getCategoryIdList()));
         return new ProductResponse().setProductDto(productMapper.productToProductDto(productRepository.save(product)));
     }
+
+    @Override
+    public void addImages(List<MultipartFile> request, UUID id) {
+        imageCrudService.uploadImages(request, imageList -> {
+            Product product = productRepository.findById(id).orElseThrow();
+            imageList.addAll(product.getImages());
+            product.setImages(imageList);
+            productRepository.save(product);
+        });
+    }
+
+    @Override
+    public void deleteImages(ImageRequest request, UUID id) {
+        Product product = productRepository.findById(id).orElseThrow();
+        List<Image> images = product.getImages().stream().filter(image -> !request.getImageIdList().contains(image.getId())).collect(Collectors.toList());
+        imageCrudService.deleteImages(request.getImageIdList(), () -> {
+            product.setImages(images);
+            productRepository.save(product);
+        });
+    }
+
+    @Override
+    public void updateMainImage(MultipartFile request, UUID id) {
+        imageCrudService.uploadImages(Collections.singletonList(request), imageList -> {
+            Product product = productRepository.findById(id).orElseThrow();
+            Runnable runnable = () -> {
+                product.setMainImage(imageList.get(0));
+                productRepository.save(product);
+            };
+            Optional.ofNullable(product.getMainImage())
+                    .ifPresentOrElse(image -> imageCrudService.deleteImages(Collections.singletonList(image.getId()), runnable), runnable);
+        });
+    }
+
 }

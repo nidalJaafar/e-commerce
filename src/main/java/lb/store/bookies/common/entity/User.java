@@ -3,7 +3,6 @@ package lb.store.bookies.common.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import lb.store.bookies.common.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

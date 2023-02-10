@@ -3,6 +3,7 @@ package lb.store.bookies.module.highlight.service;
 import lb.store.bookies.module.highlight.request.HighlightRequest;
 import lb.store.bookies.module.highlight.response.HighlightResponse;
 import lb.store.bookies.module.highlight.response.HighlightsResponse;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
@@ -48,4 +49,12 @@ public interface HighlightCrudService {
      * @param id the id
      */
     void delete(UUID id);
+
+    /**
+     * Update image.
+     *
+     * @param request the request
+     * @param id      the id
+     */
+    void updateImage(MultipartFile request, UUID id);
 }

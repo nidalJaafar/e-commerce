@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lb.store.bookies.common.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

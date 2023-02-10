@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import lb.store.bookies.common.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,4 +19,6 @@ import lombok.ToString;
 public class Highlight extends BaseEntity {
     @OneToOne
     private Product product;
+    @OneToOne
+    private Image image;
 }

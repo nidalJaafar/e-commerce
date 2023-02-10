@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+    <changeSet id="5" author="nidal">
+        <addColumn tableName="product">
+            <column name="main_image_id" type="uuid"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="product" baseColumnNames="main_image_id"
+                                 constraintName="fk_product_main_image_id" referencedTableName="image"
+                                 referencedColumnNames="id"/>
+        <dropColumn tableName="image" columnName="product_id"/>
+        <createTable tableName="product_images">
+            <column name="images_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="product_images" baseColumnNames="product_id"
+                                 constraintName="fk_product_images_product_id" referencedTableName="product"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="product_images" baseColumnNames="images_id"
+                                 constraintName="fk_product_images_images_id"
+                                 referencedTableName="image"
+                                 referencedColumnNames="id"/>
+        <addColumn tableName="highlight">
+            <column name="image_id" type="uuid"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="highlight" baseColumnNames="image_id"
+                                 constraintName="fk_highlight_image_id"
+                                 referencedTableName="image"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

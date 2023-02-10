@@ -10,5 +10,5 @@ import lombok.Data;
 @Data
 public class ProductResponse {
     @JsonProperty("data")
-    private  ProductDto productDto;
+    private ProductDto productDto;
 }
