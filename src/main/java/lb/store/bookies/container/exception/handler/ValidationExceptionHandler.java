@@ -1,6 +1,6 @@
-package lb.store.bookies.common.exception.handler;
+package lb.store.bookies.container.exception.handler;
 
-import lb.store.bookies.common.exception.response.ValidationResponse;
+import lb.store.bookies.container.exception.response.ValidationResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

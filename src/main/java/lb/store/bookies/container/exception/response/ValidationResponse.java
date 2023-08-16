@@ -1,4 +1,4 @@
-package lb.store.bookies.common.exception.response;
+package lb.store.bookies.container.exception.response;
 
 import lombok.Data;
 

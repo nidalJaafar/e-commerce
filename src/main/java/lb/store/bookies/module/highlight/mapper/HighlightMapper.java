@@ -1,10 +1,10 @@
 package lb.store.bookies.module.highlight.mapper;
 
+import lb.store.bookies.common.entity.Highlight;
+import lb.store.bookies.common.entity.Product;
 import lb.store.bookies.common.repository.ProductRepository;
 import lb.store.bookies.module.highlight.dto.HighlightDto;
-import lb.store.bookies.common.entity.Highlight;
 import lb.store.bookies.module.highlight.request.HighlightRequest;
-import lb.store.bookies.common.entity.Product;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 

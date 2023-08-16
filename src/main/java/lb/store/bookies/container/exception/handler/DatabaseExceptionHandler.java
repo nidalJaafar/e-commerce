@@ -1,6 +1,6 @@
-package lb.store.bookies.common.exception.handler;
+package lb.store.bookies.container.exception.handler;
 
-import lb.store.bookies.common.exception.response.ExceptionResponse;
+import lb.store.bookies.container.exception.response.ExceptionResponse;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -51,9 +51,7 @@ public class DatabaseExceptionHandler {
     }
 
     private String getExceptionMessage(String message) {
-        String key = map.keySet().stream().filter(message::contains).findFirst().orElseThrow(() -> {
-            throw new RuntimeException(message);
-        });
+        String key = map.keySet().stream().filter(message::contains).findFirst().orElseThrow(() -> new RuntimeException(message));
         return map.get(key);
     }
 }

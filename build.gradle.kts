@@ -30,6 +30,7 @@ dependencies {
 	implementation("com.azure:azure-storage-blob-batch")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.liquibase:liquibase-core")
+	implementation("com.jayway.jsonpath:json-path:2.8.0")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
