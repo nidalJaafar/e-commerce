@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-/**
- * Category repository.
- */
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, UUID> {
 }

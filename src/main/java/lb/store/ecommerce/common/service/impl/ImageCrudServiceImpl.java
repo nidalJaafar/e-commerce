@@ -39,7 +39,7 @@ public class ImageCrudServiceImpl implements ImageCrudService {
                                 .upload(BinaryData.fromStream(file.getInputStream()), true)
                                 .flatMap(blobItem -> Mono.just(new Image().setUrl(blobAsyncClient.getBlobUrl())));
                     } catch (IOException e) {
-                        return Flux.error(new AzureException("can't upload image"));
+                        return Flux.error(new AzureException("Error.Azure.upload-image"));
                     }
                 })
                 .collectList().subscribe(imageList -> consumer.accept(imageRepository.saveAll(imageList)));

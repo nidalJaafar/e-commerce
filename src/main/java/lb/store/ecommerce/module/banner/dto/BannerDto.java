@@ -6,9 +6,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.UUID;
 
-/**
- * Banner dto.
- */
 @Data
 public class BannerDto implements Serializable {
     private UUID id;

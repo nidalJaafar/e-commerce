@@ -6,18 +6,16 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * Cart.
- */
+import java.util.UUID;
+
 @Getter
 @Setter
 @ToString
 @Entity
 public class Cart extends BaseEntity {
     @ManyToOne
-    private User user;
-    @ManyToOne
     @ToString.Exclude
     private Product product;
     private Long quantity;
+    private UUID userId;
 }

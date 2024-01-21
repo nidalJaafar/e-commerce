@@ -2,9 +2,6 @@ package lb.store.ecommerce.container.interceptor;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jayway.jsonpath.Configuration;
-import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.JsonPath;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +22,6 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Order(value = Ordered.HIGHEST_PRECEDENCE)
 public class RequestCachingFilter extends OncePerRequestFilter {
-    private final Configuration jsonPathConfiguration;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
@@ -88,13 +84,6 @@ public class RequestCachingFilter extends OncePerRequestFilter {
         contentCachingResponseWrapper.copyBodyToResponse();
     }
 
-    private String mask(String requestBody) {
-        if (requestBody == null || requestBody.isBlank()) return "";
-        DocumentContext documentContext = JsonPath.parse(requestBody, jsonPathConfiguration);
-        if (documentContext.read("$.password", String.class) != null)
-            return documentContext.set("$.password", "******").jsonString();
-        return requestBody;
-    }
 
     private String formatJson(String requestBody) throws JsonProcessingException {
         if (requestBody == null || requestBody.isBlank()) return "";
@@ -112,7 +101,7 @@ public class RequestCachingFilter extends OncePerRequestFilter {
     }
 
     private void logRequestBody(String requestBody) throws JsonProcessingException {
-        log.info(">> REQUEST BODY: \n{}", formatJson(mask(requestBody)));
+        log.info(">> REQUEST BODY: \n{}", formatJson(requestBody));
     }
 
     private void logRequestPath(String method, String requestURI) {

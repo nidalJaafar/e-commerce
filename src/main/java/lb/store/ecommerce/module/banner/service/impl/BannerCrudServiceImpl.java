@@ -3,6 +3,7 @@ package lb.store.ecommerce.module.banner.service.impl;
 import lb.store.ecommerce.common.entity.Banner;
 import lb.store.ecommerce.common.repository.BannerRepository;
 import lb.store.ecommerce.common.service.ImageCrudService;
+import lb.store.ecommerce.container.exception.NotFound;
 import lb.store.ecommerce.module.banner.dto.BannerDto;
 import lb.store.ecommerce.module.banner.mapper.BannerMapper;
 import lb.store.ecommerce.module.banner.response.BannerResponse;
@@ -17,9 +18,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
-/**
- * Banner crud service.
- */
 @Service
 @RequiredArgsConstructor
 public class BannerCrudServiceImpl implements BannerCrudService {
@@ -36,7 +34,7 @@ public class BannerCrudServiceImpl implements BannerCrudService {
 
     @Override
     public BannerResponse get(UUID id) {
-        Banner banner = bannerRepository.findById(id).orElseThrow();
+        Banner banner = bannerRepository.findById(id).orElseThrow(() -> new NotFound("Error.Banner.not-found"));
         return new BannerResponse().setBannerDto(bannerMapper.bannerToBannerDto(banner));
     }
 
@@ -45,7 +43,7 @@ public class BannerCrudServiceImpl implements BannerCrudService {
         try {
             bannerRepository.deleteById(id);
         } catch (Exception e) {
-            throw new NoSuchElementException();
+            throw new NotFound("Error.Banner.not-found");
         }
     }
 

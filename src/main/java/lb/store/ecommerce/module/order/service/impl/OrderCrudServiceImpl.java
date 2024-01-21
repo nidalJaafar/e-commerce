@@ -6,13 +6,13 @@ import lb.store.ecommerce.common.entity.Product;
 import lb.store.ecommerce.common.repository.CartRepository;
 import lb.store.ecommerce.common.repository.OrderRepository;
 import lb.store.ecommerce.common.repository.ProductRepository;
-import lb.store.ecommerce.common.util.AuthenticatedUser;
 import lb.store.ecommerce.module.order.exception.NotEnoughQuantity;
 import lb.store.ecommerce.module.order.mapper.OrderMapper;
 import lb.store.ecommerce.module.order.request.OrderDeleteRequest;
 import lb.store.ecommerce.module.order.request.OrderRequest;
 import lb.store.ecommerce.module.order.response.OrderResponse;
 import lb.store.ecommerce.module.order.service.OrderCrudService;
+import lb.store.ecommerce.security.util.AuthenticatedUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +21,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * Order crud service.
- */
 @Service
 @RequiredArgsConstructor
 public class OrderCrudServiceImpl implements OrderCrudService {

@@ -1,17 +1,14 @@
 package lb.store.ecommerce.module.cart.dto;
 
 import lb.store.ecommerce.common.dto.ProductDto;
-import lb.store.ecommerce.common.dto.UserDto;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.UUID;
 
-/**
- * Cart dto.
- */
 @Data
 public class CartDto implements Serializable {
-    private UserDto user;
+    private UUID userId;
     private ProductDto product;
     private Long quantity;
 }

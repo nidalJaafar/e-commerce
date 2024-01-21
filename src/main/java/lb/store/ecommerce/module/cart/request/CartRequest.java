@@ -5,9 +5,6 @@ import lombok.Data;
 
 import java.util.UUID;
 
-/**
- * Cart request.
- */
 @Data
 public class CartRequest {
     private UUID productId;

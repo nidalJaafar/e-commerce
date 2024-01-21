@@ -2,6 +2,7 @@ package lb.store.ecommerce.module.category.service.impl;
 
 import lb.store.ecommerce.common.entity.Category;
 import lb.store.ecommerce.common.repository.CategoryRepository;
+import lb.store.ecommerce.container.exception.NotFound;
 import lb.store.ecommerce.module.category.mapper.CategoryMapper;
 import lb.store.ecommerce.module.category.request.CategoryRequest;
 import lb.store.ecommerce.module.category.response.CategoriesResponse;
@@ -14,9 +15,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
-/**
- * Category crud service.
- */
 @Service
 @RequiredArgsConstructor
 public class CategoryCrudServiceImpl implements CategoryCrudService {
@@ -26,7 +24,7 @@ public class CategoryCrudServiceImpl implements CategoryCrudService {
 
     @Override
     public CategoryResponse get(UUID id) {
-        Category category = categoryRepository.findById(id).orElseThrow();
+        Category category = categoryRepository.findById(id).orElseThrow(() -> new NotFound("Error.Category.not-found"));
         return new CategoryResponse().setCategoryDto(categoryMapper.categoryToCategoryDto(category));
     }
 
@@ -44,7 +42,7 @@ public class CategoryCrudServiceImpl implements CategoryCrudService {
 
     @Override
     public CategoryResponse put(CategoryRequest request, UUID id) {
-        Category saved = categoryRepository.findById(id).orElseThrow();
+        Category saved = categoryRepository.findById(id).orElseThrow(() -> new NotFound("Error.Category.not-found"));
         Category updated = categoryMapper.updateCategoryFromCategoryDto(categoryMapper.categoryRequestToCategoryDto(request), saved);
         return new CategoryResponse().setCategoryDto(categoryMapper.categoryToCategoryDto(categoryRepository.save(updated)));
     }

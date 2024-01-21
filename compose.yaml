@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  mysql-ecommerce:
+    image: "mysql:latest"
+    env_file:
+      - .env
+    environment:
+      - "MYSQL_DATABASE=${MYSQL_DATABASE_NAME}"
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+    ports:
+      - "3306:3306"
+  mysql-keycloak:
+    image: "mysql:latest"
+    environment:
+      - "MYSQL_DATABASE=keycloak"
+      - "MYSQL_ROOT_PASSWORD=root"
+    ports:
+      - "3307:3306"
+  keycloak:
+    image: "quay.io/keycloak/keycloak:latest"
+    env_file:
+      - .env
+    environment:
+      - "KC_DB=mysql"
+      - "KC_DB_URL=jdbc:mysql://mysql-keycloak:3306/keycloak"
+      - "KC_DB_USERNAME=root"
+      - "KC_DB_PASSWORD=root"
+      - "KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN}"
+      - "KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}"
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql-keycloak
+    restart: always
+    entrypoint: "/opt/keycloak/bin/kc.sh start-dev --import-realm"
+    volumes:
+      - ./config/:/opt/keycloak/data/import:ro

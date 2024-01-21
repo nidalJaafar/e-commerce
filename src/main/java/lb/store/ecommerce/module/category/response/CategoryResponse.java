@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lb.store.ecommerce.common.dto.CategoryDto;
 import lombok.Data;
 
-/**
- * Category response.
- */
 @Data
 public class CategoryResponse {
     @JsonProperty("data")

@@ -1,148 +1,133 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <changeSet author="nidal (generated)" id="1692227291149-1">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-1">
         <createTable tableName="banner">
-            <column name="id" type="UUID">
+            <column name="id" type="VARCHAR(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="bannerPK"/>
             </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="image_id" type="UUID"/>
+            <column name="created_at" type="datetime(6)"/>
+            <column name="updated_at" type="datetime(6)"/>
+            <column name="image_id" type="VARCHAR(36)"/>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-2">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-2">
         <createTable tableName="cart">
-            <column name="id" type="UUID">
+            <column name="id" type="VARCHAR(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="cartPK"/>
             </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_at" type="datetime(6)"/>
+            <column name="updated_at" type="datetime(6)"/>
             <column name="quantity" type="BIGINT"/>
-            <column name="product_id" type="UUID"/>
-            <column name="user_id" type="UUID"/>
+            <column name="user_id" type="BINARY(16)"/>
+            <column name="product_id" type="VARCHAR(36)"/>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-3">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-3">
         <createTable tableName="category">
-            <column name="id" type="UUID">
+            <column name="id" type="VARCHAR(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="categoryPK"/>
             </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_at" type="datetime(6)"/>
+            <column name="updated_at" type="datetime(6)"/>
             <column name="name" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-4">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-4">
         <createTable tableName="image">
-            <column name="id" type="UUID">
+            <column name="id" type="VARCHAR(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="imagePK"/>
             </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_at" type="datetime(6)"/>
+            <column name="updated_at" type="datetime(6)"/>
             <column name="url" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-5">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-5">
         <createTable tableName="orders">
-            <column name="id" type="UUID">
+            <column name="id" type="VARCHAR(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="ordersPK"/>
             </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_at" type="datetime(6)"/>
+            <column name="updated_at" type="datetime(6)"/>
             <column name="quantity" type="BIGINT"/>
-            <column name="product_id" type="UUID"/>
-            <column name="user_id" type="UUID"/>
+            <column name="user_id" type="BINARY(16)"/>
+            <column name="product_id" type="VARCHAR(36)"/>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-6">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-6">
         <createTable tableName="product">
-            <column name="id" type="UUID">
+            <column name="id" type="VARCHAR(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="productPK"/>
             </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
+            <column name="created_at" type="datetime(6)"/>
+            <column name="updated_at" type="datetime(6)"/>
             <column name="description" type="VARCHAR(255)"/>
             <column name="name" type="VARCHAR(255)"/>
             <column name="price" type="FLOAT(53)"/>
             <column name="quantity" type="BIGINT"/>
-            <column name="main_image_id" type="UUID"/>
+            <column name="main_image_id" type="VARCHAR(36)"/>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-7">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-7">
         <createTable tableName="product_category">
-            <column name="product_id" type="UUID">
+            <column name="product_id" type="VARCHAR(36)">
                 <constraints nullable="false"/>
             </column>
-            <column name="category_id" type="UUID">
+            <column name="category_id" type="VARCHAR(36)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-8">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-8">
         <createTable tableName="product_image">
-            <column name="product_id" type="UUID">
+            <column name="product_id" type="VARCHAR(36)">
                 <constraints nullable="false"/>
             </column>
-            <column name="images_id" type="UUID">
+            <column name="images_id" type="VARCHAR(36)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-9">
-        <createTable tableName="users">
-            <column name="id" type="UUID">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="usersPK"/>
-            </column>
-            <column name="created_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="updated_at" type="TIMESTAMP(6) WITHOUT TIME ZONE"/>
-            <column name="email" type="VARCHAR(255)"/>
-            <column name="password" type="VARCHAR(255)"/>
-            <column name="role" type="VARCHAR(255)"/>
-        </createTable>
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-9">
+        <addUniqueConstraint columnNames="image_id" constraintName="UC_BANNERIMAGE_ID_COL" tableName="banner"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-10">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-10">
+        <addUniqueConstraint columnNames="main_image_id" constraintName="UC_PRODUCTMAIN_IMAGE_ID_COL" tableName="product"/>
+    </changeSet>
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-11">
+        <addUniqueConstraint columnNames="images_id" constraintName="UC_PRODUCT_IMAGEIMAGES_ID_COL" tableName="product_image"/>
+    </changeSet>
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-12">
         <addUniqueConstraint columnNames="name" constraintName="UK46ccwnsi9409t36lurvtyljak" tableName="category"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-11">
-        <addUniqueConstraint columnNames="email" constraintName="UK6dotkott2kjsp8vw4d0m25fb7" tableName="users"/>
-    </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-12">
-        <addUniqueConstraint columnNames="images_id" constraintName="UK_dttl8hrrxxxnam99ng9ooa8ju" tableName="product_image"/>
-    </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-13">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-13">
         <addUniqueConstraint columnNames="name, description" constraintName="UKg0qud03iernng6gayc5gpnirs" tableName="product"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-14">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-14">
         <addUniqueConstraint columnNames="url" constraintName="UKkjf387atbi7cqpbeq97ywna3c" tableName="image"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-15">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-15">
         <addForeignKeyConstraint baseColumnNames="images_id" baseTableName="product_image" constraintName="FK1wlorpfwsmrj917nv57x4me2r" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="image" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-16">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-16">
         <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_category" constraintName="FK2k3smhbruedlcrvu6clued06x" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-17">
-        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="orders" constraintName="FK32ql8ubntj5uh44ph9659tiih" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="users" validate="true"/>
-    </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-18">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-17">
         <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="cart" constraintName="FK3d704slv66tw6x5hmbm6p2x3u" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-19">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-18">
         <addForeignKeyConstraint baseColumnNames="image_id" baseTableName="banner" constraintName="FK4k0b83mmo6o0wxtlnyld6hs3t" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="image" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-20">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-19">
         <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_image" constraintName="FK6oo0cvcdtb6qmwsga468uuukk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-21">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-20">
         <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="orders" constraintName="FK787ibr3guwp6xobrpbofnv7le" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-22">
-        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="cart" constraintName="FKg5uhi8vpsuy0lgloxk2h4w5o6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="users" validate="true"/>
-    </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-23">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-21">
         <addForeignKeyConstraint baseColumnNames="main_image_id" baseTableName="product" constraintName="FKia727jx9hh6kxtao8hrjuwfj3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="image" validate="true"/>
     </changeSet>
-    <changeSet author="nidal (generated)" id="1692227291149-24">
+    <changeSet author="Nidal Jaafar (generated)" id="1705794782347-22">
         <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="product_category" constraintName="FKkud35ls1d40wpjb5htpp14q4e" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="category" validate="true"/>
     </changeSet>
 </databaseChangeLog>

@@ -6,9 +6,6 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * Order response.
- */
 @Data
 public class OrderResponse {
     @JsonProperty("data")

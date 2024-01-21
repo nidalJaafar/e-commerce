@@ -9,24 +9,24 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.type.SqlTypes;
 
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.UUID;
 
-/**
- * Base entity.
- */
 @Getter
 @Setter
 @ToString
 @MappedSuperclass
-public class BaseEntity {
+public abstract class BaseEntity {
 
     @Id
     @GeneratedValue
-    @Column(columnDefinition = "UUID")
+    @Column(columnDefinition = "VARCHAR(36)")
+    @JdbcTypeCode(value = SqlTypes.VARCHAR)
     protected UUID id;
     @CreationTimestamp
     protected Timestamp createdAt;

@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-/**
- * Banner repository.
- */
 @Repository
 public interface BannerRepository extends JpaRepository<Banner, UUID> {
 }

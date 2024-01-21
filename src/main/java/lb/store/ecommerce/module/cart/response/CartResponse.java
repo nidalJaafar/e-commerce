@@ -6,9 +6,6 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * Cart response.
- */
 @Data
 public class CartResponse {
     @JsonProperty("data")

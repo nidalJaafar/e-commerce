@@ -12,9 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Banner crud controller.
- */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/banner")
@@ -22,33 +19,17 @@ public class BannerCrudController {
 
     private final BannerCrudService service;
 
-    /**
-     * Get highlights response.
-     *
-     * @return the highlights response
-     */
     @GetMapping
     public BannersResponse get() {
         return service.get();
     }
 
-    /**
-     * Get banner response.
-     *
-     * @param id the id
-     * @return the banner response
-     */
     @GetMapping("/{id}")
     public BannerResponse get(@PathVariable UUID id) {
         return service.get(id);
     }
 
 
-    /**
-     * Update image.
-     *
-     * @param request the request
-     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
@@ -56,11 +37,6 @@ public class BannerCrudController {
         service.post(request);
     }
 
-    /**
-     * Delete.
-     *
-     * @param id the id
-     */
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasRole('ADMIN')")
